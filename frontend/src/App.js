@@ -2,6 +2,8 @@ import React from "react";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ModeCommentIcon from "@mui/icons-material/ModeComment";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+
+import Avatar from "@mui/material/Avatar";
 function App() {
 	return (
 		<div>
@@ -24,19 +26,24 @@ function App() {
 
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active">
-								<a class="nav-link" href="#">
+							<li class="nav-item active text-white">
+								<a class="nav-link text-white" href="#">
 									Home <span class="sr-only">(current)</span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Link
+								<a class="nav-link text-white" href="#">
+									Notification
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-white" href="#">
+									Chat
 								</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a
-									class="nav-link dropdown-toggle"
+									class="nav-link dropdown-toggle text-white"
 									href="#"
 									id="navbarDropdown"
 									role="button"
@@ -44,7 +51,7 @@ function App() {
 									aria-haspopup="true"
 									aria-expanded="false"
 								>
-									Dropdown
+									Account
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<a class="dropdown-item" href="#">
@@ -59,20 +66,15 @@ function App() {
 									</a>
 								</div>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#">
-									Disabled
-								</a>
-							</li>
 						</ul>
-						<form class="form-inline my-2 my-lg-0">
+						{/* <form class="form-inline my-2 my-lg-0">
 							<button
 								class="btn btn-outline-success my-2 my-sm-0"
 								type="submit"
 							>
 								Search
 							</button>
-						</form>
+						</form> */}
 					</div>
 				</nav>
 			</header>
@@ -82,11 +84,190 @@ function App() {
 					<div className="col-md-4">
 						<div className="post_section p-2">
 							<div className="card p-2">
-								<div className="post_header"></div>
+								<div className="post_header">
+									<div className="row">
+										<div className="col-md-2">
+											<Avatar
+												alt="Travis Howard"
+												src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
+											/>
+										</div>
+										<div className="col-md-8">
+											<p>Dulquer Salman</p>
+										</div>
+										<div className="col-md-2">
+											<i className="fa fa-ellipsis-v"></i>
+										</div>
+									</div>
+								</div>
 								<div className="post_image p-2">
 									<div>
 										<img
-											src="https://i.pinimg.com/736x/3f/e3/c4/3fe3c4455f467ef60b2129f2326150ea.jpg"
+											src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
+											className="w-100"
+										/>
+									</div>
+								</div>
+								<hr />
+								<div className="post_actions">
+									<div>
+										0
+										<ThumbUpIcon />
+									</div>
+									<div>
+										0
+										<ModeCommentIcon />
+									</div>
+									<div>
+										0
+										<BookmarkBorderIcon />
+									</div>
+								</div>
+							</div>
+							<div className="card p-2">
+								<div className="post_header">
+									<div className="row">
+										<div className="col-md-2">
+											<Avatar
+												alt="Travis Howard"
+												src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
+											/>
+										</div>
+										<div className="col-md-8">
+											<p>Dulquer Salman</p>
+										</div>
+										<div className="col-md-2">
+											<i className="fa fa-ellipsis-v"></i>
+										</div>
+									</div>
+								</div>
+								<div className="post_image p-2">
+									<div>
+										<img
+											src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
+											className="w-100"
+										/>
+									</div>
+								</div>
+								<hr />
+								<div className="post_actions">
+									<div>
+										0
+										<ThumbUpIcon />
+									</div>
+									<div>
+										0
+										<ModeCommentIcon />
+									</div>
+									<div>
+										0
+										<BookmarkBorderIcon />
+									</div>
+								</div>
+							</div>
+							<div className="card p-2">
+								<div className="post_header">
+									<div className="row">
+										<div className="col-md-2">
+											<Avatar
+												alt="Travis Howard"
+												src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
+											/>
+										</div>
+										<div className="col-md-8">
+											<p>Dulquer Salman</p>
+										</div>
+										<div className="col-md-2">
+											<i className="fa fa-ellipsis-v"></i>
+										</div>
+									</div>
+								</div>
+								<div className="post_image p-2">
+									<div>
+										<img
+											src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
+											className="w-100"
+										/>
+									</div>
+								</div>
+								<hr />
+								<div className="post_actions">
+									<div>
+										0
+										<ThumbUpIcon />
+									</div>
+									<div>
+										0
+										<ModeCommentIcon />
+									</div>
+									<div>
+										0
+										<BookmarkBorderIcon />
+									</div>
+								</div>
+							</div>
+							<div className="card p-2">
+								<div className="post_header">
+									<div className="row">
+										<div className="col-md-2">
+											<Avatar
+												alt="Travis Howard"
+												src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
+											/>
+										</div>
+										<div className="col-md-8">
+											<p>Dulquer Salman</p>
+										</div>
+										<div className="col-md-2">
+											<i className="fa fa-ellipsis-v"></i>
+										</div>
+									</div>
+								</div>
+								<div className="post_image p-2">
+									<div>
+										<img
+											src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
+											className="w-100"
+										/>
+									</div>
+								</div>
+								<hr />
+								<div className="post_actions">
+									<div>
+										0
+										<ThumbUpIcon />
+									</div>
+									<div>
+										0
+										<ModeCommentIcon />
+									</div>
+									<div>
+										0
+										<BookmarkBorderIcon />
+									</div>
+								</div>
+							</div>
+							<div className="card p-2">
+								<div className="post_header">
+									<div className="row">
+										<div className="col-md-2">
+											<Avatar
+												alt="Travis Howard"
+												src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
+											/>
+										</div>
+										<div className="col-md-8">
+											<p>Dulquer Salman</p>
+										</div>
+										<div className="col-md-2">
+											<i className="fa fa-ellipsis-v"></i>
+										</div>
+									</div>
+								</div>
+								<div className="post_image p-2">
+									<div>
+										<img
+											src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dulquer_Salmaan_at_Karwaan_promotions_%28cropped%29.jpg"
 											className="w-100"
 										/>
 									</div>

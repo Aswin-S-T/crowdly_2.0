@@ -4,6 +4,7 @@ import data from "../data";
 import axios from "axios";
 import { BASE_URL } from "../constants/ApplicationConstants";
 import Loader from "../components/Loader";
+import Story from "../components/Story";
 
 function HomeScreen() {
 	const [posts, setPosts] = useState([]);
@@ -18,19 +19,33 @@ function HomeScreen() {
 		fetchData();
 	}, []);
 	return (
-		<div>
+		// <div className="">
+		// 	<div className="row">
+		// 		{/* <Story /> */}
+		// 		<div className="col-md-3">ds</div>
+		// 		<div className="col-md-4">
+		// 			{loading ? (
+		// 				<Loader />
+		// 			) : (
+		// 				<div className="">
+		// 					<div className="post_section">
+		// 						<div className="">
+		// 							<Post post={posts} />
+		// 						</div>
+		// 					</div>
+		// 				</div>
+		// 			)}
+		// 		</div>
+		// 		<div className="col-md-3">rr</div>
+		// 	</div>
+		// </div>
+		<div className="screen container">
 			<div className="row">
-				<div className="col-md-3">ds</div>
-				<div className="col-md-4">
-					{loading ? (
-						<Loader />
-					) : (
-						<div className="post_section p-1">
-							<Post post={posts} />
-						</div>
-					)}
+				<div className="col-md-3 col-0">1</div>
+				<div className="col-md-3 col-12">
+					<Post post={posts} />
 				</div>
-				<div className="col-md-3">rr</div>
+				<div className="col-md-3 col-0">3</div>
 			</div>
 		</div>
 	);

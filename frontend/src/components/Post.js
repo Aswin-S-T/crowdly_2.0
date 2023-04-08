@@ -9,40 +9,45 @@ function Post(props) {
 	return (
 		<div>
 			{props.post.map((post, index) => (
-				<div className="card p-2" key={index}>
-					<div className="post_header">
-						<div className="row">
-							<div className="col-md-2">
+				<div className="">
+					<div className=" p-2" key={index}>
+						<div className="post_actions">
+							<div>
 								<Avatar alt="Travis Howard" src={post.image} />
 							</div>
-							<div className="col-md-8">
-								<p style={{ color: "#111" }}>{post.name}</p>
+							<div>
+								<p style={{ color: "#111" }}>
+									{post.name ? post.name : "Dulquer Salman"}
+								</p>
 							</div>
-							<div className="col-md-2">
-								<i className="fa fa-ellipsis-v"></i>
+							<div>
+								{/* <i className="fa fa-ellipsis-v"></i> */}
+								<button className="followbtn">Follow +</button>
 							</div>
 						</div>
-					</div>
-					<div className="post_image p-2">
-						<div>
-							<img src={post.image} className="w-100" />
+
+						<div className="post_image mt-4">
+							<div>
+								<img src={post.image} className="w-100" />
+							</div>
+						</div>
+						<hr />
+						<div className="post_actions">
+							<div>
+								{post.like}
+								<ThumbUpIcon className="mt-2" />
+							</div>
+							<div>
+								{post.comment}
+								<ModeCommentIcon />
+							</div>
+							<div>
+								{post.share}
+								<BookmarkBorderIcon />
+							</div>
 						</div>
 					</div>
 					<hr />
-					<div className="post_actions">
-						<div>
-							{post.like}
-							<ThumbUpIcon className="mt-2" />
-						</div>
-						<div>
-							{post.comment}
-							<ModeCommentIcon />
-						</div>
-						<div>
-							{post.share}
-							<BookmarkBorderIcon />
-						</div>
-					</div>
 				</div>
 			))}
 		</div>

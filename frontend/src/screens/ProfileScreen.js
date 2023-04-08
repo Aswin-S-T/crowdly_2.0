@@ -17,7 +17,7 @@ function ProfileScreen() {
 	}, []);
 	return (
 		<div className="screen">
-			<div className="">
+			<div className="container">
 				<div className="text-center">
 					<img
 						src="https://wallpapercave.com/wp/wp7039397.jpg"
@@ -40,7 +40,7 @@ function ProfileScreen() {
 					</div>
 				</div>
 				<hr />
-				<div className="row">
+				{/* <div className="row">
 					<div className="col-md-4">1</div>
 					<div className="col-md-4">
 						<div
@@ -51,6 +51,13 @@ function ProfileScreen() {
 						</div>
 					</div>
 					<div className="col-md-4">3</div>
+				</div> */}
+				<div className="row">
+					<div className="col-md-3 col-0">1</div>
+					<div className="col-md-3 col-12">
+						<Post post={posts} />
+					</div>
+					<div className="col-md-3 col-0">3</div>
 				</div>
 			</div>
 		</div>

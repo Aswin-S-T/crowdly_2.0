@@ -61,3 +61,49 @@ header{
   margin: auto;
   position: absolute; */
 }
+.post_header div{
+  display: flex;
+  justify-content: space-between;
+}
+.followbtn{
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+/*Mobile responsiveness*/
+@media only screen and (max-width: 600px) {
+  header{
+    background-color: white;
+    padding: 10px;
+    /* font-family: sans-serif; */
+    font-weight: 600;
+  }
+  .headerMob{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* background-color: blue; */
+    padding: 10;
+    /* color: #fff; */
+    height: 60px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;
+  }
+  .card{
+    width: 100%;
+  }
+  .header{
+    background-color: red;
+    padding: 10;
+  }
+  .post_header div{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+/*End mobile responsive*/

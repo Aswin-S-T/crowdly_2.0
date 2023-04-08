@@ -12,6 +12,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import Avatar from "@mui/material/Avatar";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
@@ -22,6 +23,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import NotificationScreen from "./screens/NotificationScreen";
+import ChatScreen from "./screens/ChatScreen";
 
 function refreshMessages() {
 	const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
@@ -53,7 +55,9 @@ export default function FixedBottomNavigation() {
 			) : value == 1 ? (
 				<>1</>
 			) : value == 2 ? (
-				<>2</>
+				<>
+					<ChatScreen />
+				</>
 			) : value == 3 ? (
 				<>
 					<NotificationScreen />
@@ -88,7 +92,10 @@ export default function FixedBottomNavigation() {
 				>
 					<BottomNavigationAction label="Home" icon={<HomeIcon />} />
 					<BottomNavigationAction label="Search" icon={<SearchIcon />} />
-					<BottomNavigationAction label="Add" icon={<AddCircleOutlineIcon />} />
+					<BottomNavigationAction
+						label="Chat"
+						icon={<ChatBubbleOutlineIcon />}
+					/>
 
 					<BottomNavigationAction
 						label="Notification"

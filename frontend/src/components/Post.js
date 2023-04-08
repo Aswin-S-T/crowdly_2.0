@@ -16,7 +16,7 @@ function Post(props) {
 								<Avatar alt="Travis Howard" src={post.image} />
 							</div>
 							<div className="col-md-8">
-								<p>{post.name}</p>
+								<p style={{ color: "#111" }}>{post.name}</p>
 							</div>
 							<div className="col-md-2">
 								<i className="fa fa-ellipsis-v"></i>

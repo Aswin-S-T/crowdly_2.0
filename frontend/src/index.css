@@ -32,3 +32,32 @@ header{
   display: flex;
   justify-content: space-between;
 }
+.needs-validation{
+  top: 100px;
+  position: absolute;
+}
+.formBx{
+  border-radius: 10px;
+  top: 100px;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+}
+.screen{
+  top: 65px;
+  position: absolute;
+  width: 100%;
+}
+.cover{
+  height: 250px;
+}
+.profile{
+  height: 120px;
+  width: 120px;
+  /* top: 20;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute; */
+}

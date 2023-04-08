@@ -25,7 +25,7 @@ function HomeScreen() {
 					{loading ? (
 						<Loader />
 					) : (
-						<div className="post_section p-2">
+						<div className="post_section p-1">
 							<Post post={posts} />
 						</div>
 					)}

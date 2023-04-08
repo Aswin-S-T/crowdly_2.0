@@ -49,8 +49,8 @@ function Header() {
 								Account
 							</a>
 							<div className="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a className="dropdown-item" href="#">
-									Action
+								<a className="dropdown-item" href="/profile">
+									Profile
 								</a>
 								<a className="dropdown-item" href="#">
 									Another action

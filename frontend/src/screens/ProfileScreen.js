@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import AddPost from "../components/AddPost";
 import Post from "../components/Post";
 import { BASE_URL } from "../constants/ApplicationConstants";
 
@@ -40,6 +41,8 @@ function ProfileScreen() {
 					</div>
 				</div>
 				<hr />
+				{/* <button className="followbtn">Add image</button> */}
+				<AddPost />
 				{/* <div className="row">
 					<div className="col-md-4">1</div>
 					<div className="col-md-4">

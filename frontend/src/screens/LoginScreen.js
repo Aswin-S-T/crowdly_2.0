@@ -25,15 +25,42 @@ function LoginScreen() {
 			}).then(() => {
 				localStorage.setItem("user", JSON.stringify(res.data.data));
 				navigate("/");
+				window.location.reload();
 			});
 		}
 	};
 	return (
-		<div className="container">
-			<div className="row">
-				<div className="col-md-2"></div>
-				<div className="col-md-8">
-					<form className="formBx p-4" onSubmit={handleLogin}>
+		<div className="authenticationScreen">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-2"></div>
+					<div className="col-md-8">
+						<div className="form-bx p-4 mt-5">
+							<h1 className="text-center authentication-text">Login here</h1>
+							<form onSubmit={handleLogin}>
+								<label for="exampleInputEmail1">Email address</label>
+								<input
+									type="email"
+									class="form-control"
+									id="exampleInputEmail1"
+									aria-describedby="emailHelp"
+									placeholder="Enter email"
+									onChange={(e) => setEmail(e.target.value)}
+								/>
+								<label for="exampleInputPassword1">Password</label>
+								<input
+									type="password"
+									class="form-control"
+									id="exampleInputPassword1"
+									placeholder="Password"
+									onChange={(e) => setPassword(e.target.value)}
+								/>
+								<button type="submit" class="authenticationBtn mt-3">
+									Sign in
+								</button>
+							</form>
+						</div>
+						{/* <form className="formBx p-4" onSubmit={handleLogin}>
 						<h2 className="text-center">Login Here</h2>
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email address</label>
@@ -63,9 +90,10 @@ function LoginScreen() {
 						<button type="submit" class="btn btn-primary">
 							Submit
 						</button>
-					</form>
+					</form> */}
+					</div>
+					<div className="col-md-2"></div>
 				</div>
-				<div className="col-md-2"></div>
 			</div>
 		</div>
 	);

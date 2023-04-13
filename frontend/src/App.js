@@ -25,6 +25,10 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import NotificationScreen from "./screens/NotificationScreen";
 import ChatScreen from "./screens/ChatScreen";
 
+import { IconButton, Menu, MenuItem } from "@material-ui/core";
+import LoginScreen from "./screens/LoginScreen";
+import { BrowserRouter } from "react-router-dom";
+
 function refreshMessages() {
 	const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
@@ -37,39 +41,54 @@ export default function FixedBottomNavigation() {
 	const [value, setValue] = React.useState(0);
 	const ref = React.useRef(null);
 	const [messages, setMessages] = React.useState(() => refreshMessages());
+	const [loggedIn, setLoggedIn] = React.useState(false);
 
 	React.useEffect(() => {
 		ref.current.ownerDocument.body.scrollTop = 0;
 		setMessages(refreshMessages());
 	}, [value, setMessages]);
 
+	React.useEffect(() => {
+		let user = localStorage.getItem("user");
+		if (user) {
+			setLoggedIn(true);
+		}
+		if (!user) {
+			setValue(5);
+		}
+	}, []);
+
 	return (
-		<Box sx={{ pb: 7 }} ref={ref}>
-			<CssBaseline />
-			<HeaderMob className="header" />
-			{console.log("VALUE----------------", value)}
-			{value === 0 ? (
-				<>
-					<HomeScreen />
-				</>
-			) : value == 1 ? (
-				<>1</>
-			) : value == 2 ? (
-				<>
-					<ChatScreen />
-				</>
-			) : value == 3 ? (
-				<>
-					<NotificationScreen />
-				</>
-			) : value == 4 ? (
-				<>
-					<ProfileScreen />
-				</>
-			) : (
-				<></>
-			)}
-			{/* <List style={{ top: "100px", position: "absolute" }}>
+		<BrowserRouter>
+			<Box sx={{ pb: 7 }} ref={ref}>
+				<CssBaseline />
+				{loggedIn && <HeaderMob className="header" />}
+
+				{console.log("VALUE----------------", value)}
+				{value === 0 ? (
+					<>
+						<HomeScreen />
+					</>
+				) : value == 1 ? (
+					<>1</>
+				) : value == 2 ? (
+					<>
+						<ChatScreen />
+					</>
+				) : value == 3 ? (
+					<>
+						<NotificationScreen />
+					</>
+				) : value == 4 ? (
+					<>
+						<ProfileScreen />
+					</>
+				) : (
+					<>
+						<LoginScreen />
+					</>
+				)}
+				{/* <List style={{ top: "100px", position: "absolute" }}>
 				{messages.map(({ primary, secondary, person }, index) => (
 					<ListItem button key={index + person}>
 						<ListItemAvatar>
@@ -79,35 +98,68 @@ export default function FixedBottomNavigation() {
 					</ListItem>
 				))}
 			</List> */}
-			<Paper
-				sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
-				elevation={3}
-			>
-				<BottomNavigation
-					showLabels
-					value={value}
-					onChange={(event, newValue) => {
-						setValue(newValue);
-					}}
-				>
-					<BottomNavigationAction label="Home" icon={<HomeIcon />} />
-					<BottomNavigationAction label="Search" icon={<SearchIcon />} />
-					<BottomNavigationAction
-						label="Chat"
-						icon={<ChatBubbleOutlineIcon />}
-					/>
+				{loggedIn && (
+					<Paper
+						sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+						elevation={3}
+					>
+						<BottomNavigation
+							showLabels
+							value={value}
+							onChange={(event, newValue) => {
+								setValue(newValue);
+							}}
+						>
+							<BottomNavigationAction label="Home" icon={<HomeIcon />} />
+							<BottomNavigationAction label="Search" icon={<SearchIcon />} />
+							<BottomNavigationAction
+								label="Chat"
+								icon={<ChatBubbleOutlineIcon />}
+							/>
 
-					<BottomNavigationAction
-						label="Notification"
-						icon={<NotificationsIcon />}
-					/>
-					<BottomNavigationAction
-						label="Account"
-						icon={<AccountCircleIcon />}
-					/>
-				</BottomNavigation>
-			</Paper>
-		</Box>
+							<BottomNavigationAction
+								label="Notification"
+								icon={<NotificationsIcon />}
+							/>
+							<BottomNavigationAction
+								// style={{ border: "none" }}
+								// class="dropdown-toggle"
+								// // type="button"
+								// id="dropdownMenuButton"
+								// data-toggle="dropdown"
+								// aria-haspopup="true"
+								// aria-expanded="false"
+								label="Account"
+								icon={<AccountCircleIcon />}
+							/>
+							{/* <div class="dropdown">
+						<button
+							class="btn btn-secondary dropdown-toggle"
+							type="button"
+							id="dropdownMenuButton"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Dropdown button
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#">
+								Action
+							</a>
+							<a class="dropdown-item" href="#">
+								Another action
+							</a>
+							<a class="dropdown-item" href="#">
+								Something else here
+							</a>
+						</div>
+					</div> */}
+						</BottomNavigation>
+					</Paper>
+				)}
+			</Box>
+		</BrowserRouter>
 	);
 }
 
